@@ -27,7 +27,7 @@ const pItems = document.querySelectorAll('p');
 
 const pText = document.querySelectorAll("p");
 for (let i = 0; i < pText.length; i++) {
-  TweenMax.to("p", 2.5, { ease: Circ.easeOut, y: -3000 });
+  TweenMax.to("p", 10.5, { ease: Circ.easeOut, y: -3000 });
 //   event.target.style.display = "none";
 };
 
@@ -70,7 +70,7 @@ imgFour.addEventListener('click', function(event){
 const h2Items = document.querySelectorAll('nav-link');
 
 [].forEach.call(document.getElementsByClassName("nav-link"), function(event) {
-    event.addEventListener("dblclick", function() {
+    event.addEventListener("click", function() {
       alert ("THIS PAGE HAS BEEN TAKEN OVER. DO NOT BE ALARMED");//to get the id attribute of the clicked element..    
     //   this.getElementsByClassName("nav-link")[0].innerHTML = "Hello World";
       event.stopPropagation();
@@ -79,3 +79,12 @@ const h2Items = document.querySelectorAll('nav-link');
 
 
 
+  document.body.addEventListener('mouseover', function(e){
+    var self = this,
+        old_bg = this.style.background;
+
+    this.style.background = this.style.background=='crimson'? 'blue':'black';
+    setTimeout(function(){
+        self.style.background = old_bg;
+    }, 1000);
+})
